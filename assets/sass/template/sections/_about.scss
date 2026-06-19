@@ -550,3 +550,16 @@
         }
     }
 }
+
+
+
+.address-text-wrap{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.address-text{
+    max-width: 250px;
+    width: 100%;
+}

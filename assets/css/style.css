@@ -8491,13 +8491,18 @@ ul.wp-block-latest-posts li:last-child {
 }
 
 /* Contact Page---------------------------------- */
+.contact-page-card {
+  position: relative;
+}
 .contact-page-card .contact-page-card-details {
-  padding: 40px 40px 0;
+  padding: 40px 40px;
   /* Large devices */
 }
 @media (max-width: 1199px) {
   .contact-page-card .contact-page-card-details {
     padding: 30px 30px 0;
+    position: relative;
+    z-index: 20;
   }
 }
 .contact-page-card .contact-page-card_title {
@@ -8540,13 +8545,36 @@ ul.wp-block-latest-posts li:last-child {
   color: var(--theme-color);
 }
 .contact-page-card .contact-page-card-thumb {
-  margin-top: 120px;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  max-width: 350px;
+  /* Large devices */
+}
+@media (max-width: 1199px) {
+  .contact-page-card .contact-page-card-thumb {
+    margin-top: 40px;
+    position: relative;
+    bottom: unset;
+    right: unset;
+  }
 }
 .contact-page-card .contact-page-card-thumb img {
-  height: 280px;
+  height: auto;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* Large devices */
+}
+@media (max-width: 1199px) {
+  .contact-page-card .contact-page-card-thumb img {
+    height: 280px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 
 .map-sec {
@@ -9303,6 +9331,23 @@ ul.wp-block-latest-posts li:last-child {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+}
+
+.address-text-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.address-text {
+  max-width: 250px;
+  width: 100%;
 }
 
 /* Client 1 ---------------------------------- */
